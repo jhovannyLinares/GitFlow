@@ -17,7 +17,8 @@ public class App {
 		System.out.println("Iniciando conexion");
 		
 		if (initConexion()) {
-			//Creamos un conflicto de codigo
+			//Vamos a modificar el texto para encontrar 
+			//erores al realizar merge o rebase
 			cargaService = new CargaService();
 			cargaService.ini();
 			commit();
