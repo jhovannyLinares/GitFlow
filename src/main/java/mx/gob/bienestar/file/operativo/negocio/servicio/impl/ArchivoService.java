@@ -20,7 +20,6 @@ public class ArchivoService {
 	private final Integer CARGA_CORRECTA = 2;
 	private final Integer PENDIENTE = 3;
 
-//	private final String DISCO = "E";
 	private final String DISCO = "C";
 
 	public List<Integer> getLista() {
@@ -57,6 +56,38 @@ public class ArchivoService {
 		System.out.println("Archivo Procesado");
 
 	}
+
+	public void procesar2(Integer index) {
+
+		System.out.println("Procesando archivo: " + index);
+
+		long startTime = System.currentTimeMillis();
+		if (validarStatus(index)) {
+			System.out.println("validarStatus: " + (System.currentTimeMillis() - startTime));
+
+			startTime = System.currentTimeMillis();
+			if (cambiarStatusArchivo(index)) {
+				System.out.println("cambiarStatusArchivo: " + (System.currentTimeMillis() - startTime));
+				startTime = System.currentTimeMillis();
+				borrarDatosArchivoAnterior(index);
+				System.out.println("borrarDatosArchivoAnterior: " + (System.currentTimeMillis() - startTime));
+				readFile(index);
+				startTime = System.currentTimeMillis();
+				Pool.executeBach();
+				System.out.println("executeBach: " + (System.currentTimeMillis() - startTime));
+				cambiarStatusOperativo(index);
+			}
+
+		}
+
+		Pool.commit();
+		System.out.println("Archivo Procesado");
+
+	}
+
+
+
+
 
 	private void borrarDatosArchivoAnterior(Integer index) {
 
