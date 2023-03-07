@@ -17,7 +17,7 @@ public class App {
 		System.out.println("Iniciando conexion");
 		
 		if (initConexion()) {
-			
+			//Iniciamos pruebas de modificacion de codigo
 			cargaService = new CargaService();
 			cargaService.ini();
 			commit();
