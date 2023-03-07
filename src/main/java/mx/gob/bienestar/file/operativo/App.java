@@ -18,9 +18,13 @@ public class App {
 		
 		if (initConexion()) {
 			//Creamos un conflicto de codigo
-			cargaService = new CargaService();
-			cargaService.ini();
-			commit();
+			//aadasdasdas
+			//bdasdasdas
+			//casdasdasd
+			//dasdasdasdasdas
+			//cargaService = new CargaService();
+			//cargaService.ini();
+			//commit();
 
 		} else {
 			System.out.println("No se logro conectar a la BBDD");
