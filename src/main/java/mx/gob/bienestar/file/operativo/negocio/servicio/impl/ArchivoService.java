@@ -58,6 +58,24 @@ public class ArchivoService {
 
 	}
 
+	private void borrarDatosArchivoAnterior2(Integer index) {
+
+		OperativoDAO dao = new OperativoDAO();
+		dao.borrarErrores(index);
+		dao.borrarLote(index);
+		Pool.commit();
+
+	}
+
+	private void borrarDatosArchivoAnterior3(Integer index) {
+
+		OperativoDAO dao = new OperativoDAO();
+		dao.borrarErrores(index);
+		dao.borrarLote(index);
+		Pool.commit();
+
+	}
+
 	private void borrarDatosArchivoAnterior(Integer index) {
 
 		OperativoDAO dao = new OperativoDAO();
